@@ -1,0 +1,576 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVision Pro | Climate Intelligence Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Premium Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-earth-americas"></i></div>
+                <h2>EcoVision <span>Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-tab="dashboard">
+                    <a href="#"><i class="fas fa-chart-network"></i><span>Climate Intelligence</span></a>
+                </div>
+                <div class="nav-item" data-tab="footprint">
+                    <a href="#"><i class="fas fa-shoe-prints"></i><span>My Footprint</span></a>
+                </div>
+                <div class="nav-item" data-tab="solutions">
+                    <a href="#"><i class="fas fa-rocket"></i><span>AI Solutions</span></a>
+                </div>
+                <div class="nav-item" data-tab="disasters">
+                    <a href="#"><i class="fas fa-fire-smoke"></i><span>Disaster Tracker</span></a>
+                </div>
+                <div class="nav-item" data-tab="community">
+                    <a href="#"><i class="fas fa-users-line"></i><span>Eco Community</span></a>
+                </div>
+            </nav>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Climate+Warrior&background=27ae60&color=fff" alt="User">
+                <div class="user-info">
+                    <strong>Climate Warrior</strong>
+                    <span>Gold Member</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Climate Intelligence Dashboard -->
+            <div class="tab-content dashboard-tab">
+                <div class="header">
+                    <h1><i class="fas fa-chart-network"></i> Climate Intelligence Dashboard</h1>
+                    <div class="header-actions">
+                        <div class="date-display" id="current-date"></div>
+                        <button class="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+                    </div>
+                </div>
+                
+                <!-- Real-time Climate Grid -->
+                <div class="climate-grid">
+                    <!-- Global CO2 Card -->
+                    <div class="data-card co2-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-smog"></i> Atmospheric CO₂</h3>
+                            <div class="card-badge live">LIVE</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="main-value" id="co2-level">421 ppm</div>
+                            <div class="secondary-value">+2.5 ppm/year</div>
+                            <div class="progress-track">
+                                <div class="progress-bar" style="width: 85%"></div>
+                                <div class="progress-labels">
+                                    <span>Pre-industrial (280 ppm)</span>
+                                    <span>Current</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Temperature Card -->
+                    <div class="data-card temp-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-temperature-high"></i> Global Warming</h3>
+                            <div class="card-badge warning">ALERT</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="main-value" id="global-temp">+1.27°C</div>
+                            <div class="secondary-value">Since 1880</div>
+                            <div class="temp-gauge">
+                                <div class="gauge-track">
+                                    <div class="gauge-fill" style="width: 63.5%"></div>
+                                </div>
+                                <div class="gauge-labels">
+                                    <span>0°C</span>
+                                    <span>1.5°C</span>
+                                    <span>2°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Map -->
+                    <div class="data-card map-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-map-location-dot"></i> Climate Impact Map</h3>
+                            <div class="map-controls">
+                                <button class="map-btn active" data-layer="co2">CO₂</button>
+                                <button class="map-btn" data-layer="temp">Temperature</button>
+                                <button class="map-btn" data-layer="wildfires">Wildfires</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="map-container">
+                                <img src="https://climate.nasa.gov/system/internal_resources/details/original/2466_Climate-Impact-Map.jpg" alt="Climate Impact Map" class="map-image">
+                                <div class="map-overlay" id="map-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- News Feed -->
+                    <div class="data-card news-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-newspaper"></i> Climate News</h3>
+                            <div class="card-badge updates">5 NEW</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="news-item">
+                                <div class="news-badge urgent">BREAKING</div>
+                                <h4>Arctic Sea Ice Hits Record Low</h4>
+                                <p>Summer 2024 measurements show 30% reduction compared to 1980s baseline...</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-clock"></i> 2 hours ago</span>
+                                    <span><i class="fas fa-source"></i> NASA Climate</span>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <h4>Renewables Surpass Coal in EU</h4>
+                                <p>Wind and solar now generate 42% of electricity in European Union countries...</p>
+                                <div class="news-meta">
+                                    <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                                    <span><i class="fas fa-source"></i> Green Energy Report</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carbon Budget -->
+                    <div class="data-card budget-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-hourglass-half"></i> Remaining Carbon Budget</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="budget-display">
+                                <div class="budget-gauge">
+                                    <div class="budget-fill" style="height: 72%"></div>
+                                </div>
+                                <div class="budget-details">
+                                    <div class="budget-value">420 GtCO₂</div>
+                                    <div class="budget-text">Remaining to stay below 1.5°C</div>
+                                    <div class="budget-timer">
+                                        <i class="fas fa-clock"></i> Current rate: 8 years left
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Polluters -->
+                    <div class="data-card polluters-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-industry"></i> Top Carbon Emitters</h3>
+                            <div class="timeframe-selector">
+                                <select id="emitter-timeframe">
+                                    <option>2024</option>
+                                    <option>2023</option>
+                                    <option>Decade</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="emitter-list">
+                                <div class="emitter-item">
+                                    <div class="emitter-rank">1</div>
+                                    <div class="emitter-name">China</div>
+                                    <div class="emitter-bar">
+                                        <div class="emitter-fill" style="width: 32%"></div>
+                                    </div>
+                                    <div class="emitter-value">12.5 Gt</div>
+                                </div>
+                                <div class="emitter-item">
+                                    <div class="emitter-rank">2</div>
+                                    <div class="emitter-name">United States</div>
+                                    <div class="emitter-bar">
+                                        <div class="emitter-fill" style="width: 15%"></div>
+                                    </div>
+                                    <div class="emitter-value">5.8 Gt</div>
+                                </div>
+                                <div class="emitter-item">
+                                    <div class="emitter-rank">3</div>
+                                    <div class="emitter-name">India</div>
+                                    <div class="emitter-bar">
+                                        <div class="emitter-fill" style="width: 7%"></div>
+                                    </div>
+                                    <div class="emitter-value">2.9 Gt</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Footprint Tab -->
+            <div class="tab-content footprint-tab" style="display:none">
+                <div class="header">
+                    <h1><i class="fas fa-shoe-prints"></i> Personal Carbon Footprint Analysis</h1>
+                    <div class="header-actions">
+                        <button class="premium-btn"><i class="fas fa-crown"></i> Compare Globally</button>
+                    </div>
+                </div>
+                
+                <div class="footprint-container">
+                    <!-- Calculator Form -->
+                    <div class="data-card calculator-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-calculator"></i> Calculate Your Impact</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="footprintForm">
+                                <div class="form-group">
+                                    <label><i class="fas fa-bolt"></i> Monthly Electricity (kWh)</label>
+                                    <input type="number" id="electricity" placeholder="e.g., 300">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><i class="fas fa-car"></i> Vehicle Distance (km/month)</label>
+                                    <input type="number" id="carTravel" placeholder="e.g., 500">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><i class="fas fa-drumstick-bite"></i> Meat Meals/Week</label>
+                                    <input type="number" id="meatMeals" placeholder="e.g., 7">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><i class="fas fa-plane"></i> Flight Hours (annual)</label>
+                                    <input type="number" id="flights" placeholder="e.g., 10">
+                                </div>
+                                
+                                <button type="button" class="calculate-btn" onclick="calculateFootprint()">
+                                    <i class="fas fa-leaf"></i> Calculate Footprint
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Display -->
+                    <div class="data-card results-card" id="footprintResults" style="display:none">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-pie"></i> Your Carbon Breakdown</h3>
+                            <div class="card-badge" id="footprintRating">MODERATE</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="footprint-metrics">
+                                <div class="metric">
+                                    <div class="metric-value" id="electricityEmissions">0 kg</div>
+                                    <div class="metric-label">Electricity</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" id="transportEmissions">0 kg</div>
+                                    <div class="metric-label">Transport</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" id="dietEmissions">0 kg</div>
+                                    <div class="metric-label">Diet</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" id="flightEmissions">0 kg</div>
+                                    <div class="metric-label">Flights</div>
+                                </div>
+                            </div>
+                            
+                            <div class="total-footprint">
+                                <div class="main-value" id="totalCO2">0 kg CO₂</div>
+                                <div class="secondary-value">Monthly Carbon Footprint</div>
+                            </div>
+                            
+                            <div class="comparison-chart">
+                                <div class="chart-bar yours" id="yourBar" style="width: 0%"></div>
+                                <div class="chart-bar average" style="width: 70%"></div>
+                                <div class="chart-labels">
+                                    <span>You</span>
+                                    <span>National Avg</span>
+                                </div>
+                            </div>
+                            
+                            <div class="footprint-tips">
+                                <h4><i class="fas fa-lightbulb"></i> Reduction Tips</h4>
+                                <ul id="reductionTips">
+                                    <li>Switch to renewable energy providers</li>
+                                    <li>Reduce meat consumption to 2-3 meals/week</li>
+                                    <li>Use public transport 2+ days/week</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Solutions Tab -->
+            <div class="tab-content solutions-tab" style="display:none">
+                <div class="header">
+                    <h1><i class="fas fa-rocket"></i> AI-Powered Climate Solutions</h1>
+                    <div class="header-actions">
+                        <button class="premium-btn"><i class="fas fa-robot"></i> Try AI Assistant</button>
+                    </div>
+                </div>
+                
+                <div class="solutions-grid">
+                    <div class="data-card solution-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-solar-panel"></i> Renewable Energy Optimizer</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Our AI analyzes your location and energy usage to recommend the optimal renewable energy mix.</p>
+                            <button class="solution-btn">Analyze My Home</button>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card solution-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-leaf"></i> Carbon Offset Planner</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Get personalized recommendations for high-impact carbon offset projects based on your footprint.</p>
+                            <button class="solution-btn">View Recommendations</button>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card solution-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-city"></i> Smart City Solutions</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Discover how AI is helping cities reduce emissions through traffic optimization and energy management.</p>
+                            <button class="solution-btn">Explore Solutions</button>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card solution-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-line"></i> Investment Analyzer</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Identify the most impactful green investments based on your financial profile and values.</p>
+                            <button class="solution-btn">Analyze Portfolio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disaster Tracker Tab -->
+            <div class="tab-content disasters-tab" style="display:none">
+                <div class="header">
+                    <h1><i class="fas fa-fire-smoke"></i> Global Climate Disaster Tracker</h1>
+                    <div class="header-actions">
+                        <select id="disaster-filter">
+                            <option>All Events</option>
+                            <option>Wildfires</option>
+                            <option>Floods</option>
+                            <option>Hurricanes</option>
+                            <option>Heatwaves</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="disaster-map-container">
+                    <div class="data-card map-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-map-marked-alt"></i> Live Disaster Map</h3>
+                            <div class="card-badge live">REALTIME</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="map-container">
+                                <img src="https://gibs.earthdata.nasa.gov/image-download?TIME=2024357&extent=-180,-90,180,90&epsg=4326&layers=MODIS_Terra_CorrectedReflectance_TrueColor,Coastlines&opacities=1,1&worldfile=false&format=image/jpeg&width=1200&height=600" alt="Disaster Map" class="map-image">
+                                <div class="disaster-markers">
+                                    <div class="marker wildfire" style="top: 30%; left: 20%" data-event="California Wildfires">
+                                        <div class="marker-tooltip">California Wildfires (12,000 acres)</div>
+                                    </div>
+                                    <div class="marker flood" style="top: 50%; left: 80%" data-event="Bangladesh Floods">
+                                        <div class="marker-tooltip">Bangladesh Floods (2M affected)</div>
+                                    </div>
+                                    <div class="marker hurricane" style="top: 25%; left: 65%" data-event="Hurricane Maria">
+                                        <div class="marker-tooltip">Hurricane Maria (Category 3)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card disaster-list-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-list"></i> Recent Events</h3>
+                            <div class="card-badge updates">12 NEW</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="disaster-item">
+                                <div class="disaster-icon wildfire">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="disaster-info">
+                                    <h4>California Wildfires</h4>
+                                    <p>12,000 acres burned • 500 evacuated</p>
+                                    <div class="disaster-meta">
+                                        <span><i class="fas fa-clock"></i> Updated 3h ago</span>
+                                        <span><i class="fas fa-location-dot"></i> Northern California</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="disaster-item">
+                                <div class="disaster-icon flood">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <div class="disaster-info">
+                                    <h4>Bangladesh Floods</h4>
+                                    <p>2 million affected • 200+ deaths</p>
+                                    <div class="disaster-meta">
+                                        <span><i class="fas fa-clock"></i> Updated 5h ago</span>
+                                        <span><i class="fas fa-location-dot"></i> Dhaka Region</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="disaster-item">
+                                <div class="disaster-icon hurricane">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="disaster-info">
+                                    <h4>Hurricane Maria</h4>
+                                    <p>Category 3 • 120mph winds</p>
+                                    <div class="disaster-meta">
+                                        <span><i class="fas fa-clock"></i> Updated 1h ago</span>
+                                        <span><i class="fas fa-location-dot"></i> Caribbean Sea</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eco Community Tab -->
+            <div class="tab-content community-tab" style="display:none">
+                <div class="header">
+                    <h1><i class="fas fa-users-line"></i> Eco Community Network</h1>
+                    <div class="header-actions">
+                        <button class="premium-btn"><i class="fas fa-plus"></i> Create Post</button>
+                    </div>
+                </div>
+                
+                <div class="community-container">
+                    <div class="data-card profile-card">
+                        <div class="profile-header">
+                            <img src="https://ui-avatars.com/api/?name=Climate+Warrior&background=27ae60&color=fff" alt="User">
+                            <h3>Climate Warrior</h3>
+                            <p>Gold Member • 1,240 Eco Points</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <p>65% to Platinum Level</p>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <strong>248</strong>
+                                <span>Posts</span>
+                            </div>
+                            <div class="stat">
+                                <strong>1.2K</strong>
+                                <span>Followers</span>
+                            </div>
+                            <div class="stat">
+                                <strong>356</strong>
+                                <span>Following</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card feed-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-newspaper"></i> Community Feed</h3>
+                            <div class="feed-filter">
+                                <button class="active">All</button>
+                                <button>Following</button>
+                                <button>Trending</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="post">
+                                <div class="post-header">
+                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="User">
+                                    <div class="post-user">
+                                        <strong>EcoEmma</strong>
+                                        <span>2h ago • <i class="fas fa-globe-americas"></i></span>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <p>Just completed my 30-day zero waste challenge! Reduced my household waste by 85%. Here are my top tips...</p>
+                                    <img src="https://images.unsplash.com/photo-1585435557343-3b07805a129b" alt="Zero Waste" class="post-image">
+                                </div>
+                                <div class="post-actions">
+                                    <button><i class="fas fa-heart"></i> 124</button>
+                                    <button><i class="fas fa-comment"></i> 32</button>
+                                    <button><i class="fas fa-share"></i> Share</button>
+                                </div>
+                            </div>
+                            
+                            <div class="post">
+                                <div class="post-header">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                                    <div class="post-user">
+                                        <strong>GreenGuru</strong>
+                                        <span>5h ago • <i class="fas fa-users"></i> Climate Activists</span>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <p>Our community solar initiative just reached 500 participants! Together we're offsetting 12,000 tons of CO2 annually.</p>
+                                </div>
+                                <div class="post-actions">
+                                    <button><i class="fas fa-heart"></i> 89</button>
+                                    <button><i class="fas fa-comment"></i> 14</button>
+                                    <button><i class="fas fa-share"></i> Share</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-card groups-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-users"></i> Recommended Groups</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="group">
+                                <div class="group-icon">
+                                    <i class="fas fa-solar-panel"></i>
+                                </div>
+                                <div class="group-info">
+                                    <h4>Renewable Energy Enthusiasts</h4>
+                                    <p>24K members • 120 online</p>
+                                </div>
+                            </div>
+                            
+                            <div class="group">
+                                <div class="group-icon">
+                                    <i class="fas fa-bicycle"></i>
+                                </div>
+                                <div class="group-info">
+                                    <h4>Zero Emission Transport</h4>
+                                    <p>18K members • 85 online</p>
+                                </div>
+                            </div>
+                            
+                            <div class="group">
+                                <div class="group-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="group-info">
+                                    <h4>Urban Gardening Collective</h4>
+                                    <p>32K members • 210 online</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
